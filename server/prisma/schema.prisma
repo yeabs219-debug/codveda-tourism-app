@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now())
+
+  bookings   Booking[]
+  favourites Favourite[]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Destination {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  location    String
+  price       Decimal
+  imageUrl    String
+  category    String
+  createdAt   DateTime @default(now())
+
+  bookings   Booking[]
+  favourites Favourite[]
+}
+
+model Booking {
+  id            String        @id @default(uuid())
+  userId        String
+  destinationId String
+  bookingDate   DateTime      @default(now())
+  travelDate    DateTime
+  guests        Int
+  status        BookingStatus @default(PENDING)
+  createdAt     DateTime      @default(now())
+
+  user        User        @relation(fields: [userId], references: [id])
+  destination Destination @relation(fields: [destinationId], references: [id])
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+model Favourite {
+  id            String   @id @default(uuid())
+  userId        String
+  destinationId String
+  createdAt     DateTime @default(now())
+
+  user        User        @relation(fields: [userId], references: [id])
+  destination Destination @relation(fields: [destinationId], references: [id])
+
+  @@unique([userId, destinationId])
+}
