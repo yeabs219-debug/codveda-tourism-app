@@ -1,4 +1,4 @@
-import { PrismaClient } from "../generated/prisma/client.ts";
+import { PrismaClient } from "../generated/prisma/client.js";
 import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
 
@@ -11,7 +11,7 @@ const destinations = [
     description: "Medieval rock-hewn churches carved directly into volcanic rock, a UNESCO World Heritage site and one of Ethiopia's holiest places.",
     location: "Lalibela, Ethiopia",
     price: 45.0,
-    imageUrl: "https://example.com/lalibela.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1580320209809-a0c51e645872?q=80&w=1600&auto=format&fit=crop",
     category: "Historical",
   },
   {
@@ -19,7 +19,7 @@ const destinations = [
     description: "Dramatic highland trekking through jagged peaks and deep valleys, home to the Gelada baboon and Walia ibex.",
     location: "Simien Mountains, Ethiopia",
     price: 120.0,
-    imageUrl: "https://example.com/simien.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572888195250-3037a59d3578?q=80&w=1600&auto=format&fit=crop",
     category: "Adventure",
   },
   {
@@ -27,7 +27,7 @@ const destinations = [
     description: "One of the hottest and most otherworldly landscapes on Earth, with sulfur springs, salt flats, and active volcanoes.",
     location: "Danakil Depression, Ethiopia",
     price: 200.0,
-    imageUrl: "https://example.com/danakil.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1516533075015-a3838414c3ca?q=80&w=1600&auto=format&fit=crop",
     category: "Adventure",
   },
   {
@@ -35,7 +35,7 @@ const destinations = [
     description: "A dramatic waterfall on the Blue Nile river, known locally as 'Tis Issat' — smoking water.",
     location: "Bahir Dar, Ethiopia",
     price: 30.0,
-    imageUrl: "https://example.com/bluenile.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1668939581252-470c103ac7da?q=80&w=1600&auto=format&fit=crop",
     category: "Nature",
   },
 ];
