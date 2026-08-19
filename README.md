@@ -113,6 +113,13 @@ These are intentional scope boundaries, not oversights:
 - No server-side pagination or filtering
 - No endpoint for an admin to list bookings across all users — an admin can only confirm a booking they already have visibility into (their own bookings list)
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Screenshot 1](./screenshots/Screenshot1.png) | ![Screenshot 2](./screenshots/Screenshot2.png) |
+| ![Screenshot 3](./screenshots/Screenshot3.png) | ![Screenshot 4](./screenshots/Screenshot4.png) |
+
 ## Getting Started
 
 ### Prerequisites
